@@ -1,0 +1,9 @@
+#check if htaccess is enabled on marker's server
+SetEnv HTACCESS on
+
+#redirect errors to friendly pages
+ErrorDocument 404 /components/404.php
+ErrorDocument 403 /components/403.php
+
+#forbid access to folders that don't have index files
+Options -Indexes
