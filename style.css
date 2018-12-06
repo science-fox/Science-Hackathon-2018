@@ -1,0 +1,97 @@
+/*navbar customisations*/
+nav.navbar-footer-custom {
+    position: absolute !important;
+    bottom: 0;
+    margin-bottom: 0px;
+}
+nav.navbar-custom {
+  background-color: #b2b2ff;
+  position: fixed;
+  width: 100%;
+}
+nav.navbar-custom .dropdown-menu{
+  background-color: #c3c3ff;
+}
+nav.navbar-custom .navbar-nav a,
+nav.navbar-custom .navbar-nav a.navbar-brand {
+    color: rgb(50,50,50);
+}
+nav.navbar-custom .nav-item.active .nav-link,
+nav.navbar-custom .nav-item:hover .nav-link {
+    color: #555555;
+}
+
+nav.navbar-custom .navbar-toggle .icon-bar {
+  background-color: #555555 !important;
+}
+
+/*jumbotron customisations*/
+.jumbotron-custom {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+/*blog styles*/
+.blog-entry {
+  background-color: #eeeeee;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.blog-title {
+  font-size: 200%;
+  font-weight: bold;
+}
+.blog-undertitle{
+  margin-bottom: 15px;
+}
+.blog-name {
+  font-size: 130%;
+}
+.blog-date {
+  font-size: 115%;
+  font-family: sans-serif;
+}
+.blog-body {
+
+}
+
+/*additional styles*/
+
+html,body {
+  /*helps keep footer at the bottom*/
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.wrapper {
+  /*helps keep footer at the bottom*/
+  min-height: 100%;
+  position: relative;
+}
+
+.body-div {
+  /*keeps nice spacing after header/before footer*/
+  padding-top: 50px;
+  padding-bottom: 70px;
+}
+
+a[href^="http"] {
+  /*Not that I have external links but a real site would*/
+  background: url(/images/external.png) center right no-repeat;
+  padding-right: 20px;
+}
+
+textarea {
+  min-height: 200px;
+  resize: vertical;
+  overflow: auto;
+}
+
+.right {
+  float:right;
+}
+
+.red {
+  color: red;
+}
