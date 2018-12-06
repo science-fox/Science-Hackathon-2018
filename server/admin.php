@@ -6,23 +6,21 @@
     if (isset($_POST['type'])) {
       if ($_POST['type'] === 'signup' && isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])) {
         $valid = true;
-        $db = new PDO('pgsql:host=regent.ecs.vuw.ac.nz;dbname=hackathon-science-fox', 'sartorguy', 'password');
-          #OR pg_connect("host=regent.ecs.vuw.ac.nz dbname=hackathon-science-fox user=sartorguy password=password");
+        $db = mysqli_connect("sql12.freemysqlhosting.net:3306", "sql12268809",	"jftvPpaqd1", "sql12268809");
         if (!$db){
           echo -1;
         } else {
-          $name = pg_escape_string($db, $_POST['name']);
-          $email = pg_escape_string($db, $_POST['email']);
-          #$password = pg_escape_string($db, password_hash($_POST['password'], PASSWORD_ARGON2I)); NOTE: This required additional server setup.
-          $password = pg_escape_string($db, hash("md5", $_POST['password'])); //NOTE: Not actually all that secure. See above.
+          $name = mysqli_escape_string($db, $_POST['name']);
+          $email = mysqli_escape_string($db, $_POST['email']);
+          #$password = mysqli_escape_string($db, password_hash($_POST['password'], PASSWORD_ARGON2I)); NOTE: This required additional server setup.
+          $password = mysqli_escape_string($db, hash("md5", $_POST['password'])); //NOTE: Not actually all that secure. See above.
           $cookieExpire = time()+86400;
           $cookieValue = hash("md5", $email.$cookieExpire);
           $success = $db->query("INSERT INTO Student VALUES ('$email', '$name', '$password', '$cookieValue', $cookieExpire)");
-            #OR $success = pg_query($db, "INSERT INTO Student VALUES ('$email', '$name', '$password', '$cookieValue', $cookieExpire)");
           if ($success) {
             setcookie("localhostUser", $cookieValue, $cookieExpire, "/");
           }
-          pg_close($db);
+          mysqli_close($db);
           echo $success;
         }
       }
@@ -30,13 +28,13 @@
       #for logging in a user
       else if ($_POST['type'] == 'login' && isset($_POST['email']) && isset($_POST['password'])) {
         $valid = true;
-        $db = new PDO('pgsql:host=regent.ecs.vuw.ac.nz;dbname=hackathon-science-fox', 'sartorguy', 'password');
+        $db = mysqli_connect("sql12.freemysqlhosting.net:3306", "sql12268809",	"jftvPpaqd1", "sql12268809");
         if (!$db){
           echo -1;
         } else {
-          $email = pg_escape_string($db, $_POST['email']);
-          #$password = pg_escape_string($db, password_hash($_POST['password'], PASSWORD_ARGON2I)); NOTE: This required additional server setup.
-          $password = pg_escape_string($db, hash("md5", $_POST['password'])); //NOTE: Not actually all that secure. See above.
+          $email = mysqli_escape_string($db, $_POST['email']);
+          #$password = mysqli_escape_string($db, password_hash($_POST['password'], PASSWORD_ARGON2I)); NOTE: This required additional server setup.
+          $password = mysqli_escape_string($db, hash("md5", $_POST['password'])); //NOTE: Not actually all that secure. See above.
           $numMatching = $db->query("SELECT email FROM Student WHERE email = '$email' AND password = '$password'")->num_rows;#check credentials
           if ($numMatching === 1) {
             #calculate cookie token and expiry
@@ -51,7 +49,7 @@
           } else {
             echo "invalid credentials";
           }
-          pg_close($db);
+          mysqli_close($db);
         }
       }
     }
@@ -61,13 +59,13 @@
   else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if (isset($_GET['email'])) {
       $valid = true;
-        $db = new PDO('pgsql:host=regent.ecs.vuw.ac.nz;dbname=hackathon-science-fox', 'sartorguy', 'password');
+      $db = mysqli_connect("sql12.freemysqlhosting.net:3306", "sql12268809",	"jftvPpaqd1", "sql12268809");
       if (!$db){
         echo -1;
       } else {
-        $email = pg_escape_string($db, $_GET['email']);
-        $response = $db->query("SELECT email FROM User WHERE email = '$email'");
-        pg_close($db);
+        $email = mysqli_escape_string($db, $_GET['email']);
+        $response = $db->query("SELECT email FROM Student WHERE email = '$email'");
+        mysqli_close($db);
         echo $response->num_rows;
       }
     }
