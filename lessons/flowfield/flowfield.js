@@ -28,7 +28,7 @@ function createFlowField() {
 }
 
 function setup() {
-    createCanvas(200, 200);
+    createCanvas(800, 800);
     cols = floor(width / scl);
     rows = floor(height / scl);
 	p1 = new Vehicle(100,100,5);
