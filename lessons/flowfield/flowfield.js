@@ -2,6 +2,7 @@ var incr = 0.1;
 var scl = 10;
 var cols, rows;
 var field
+var displayField = true;
 
 var p1;
 
@@ -30,31 +31,38 @@ function setup() {
     createCanvas(200, 200);
     cols = floor(width / scl);
     rows = floor(height / scl);
-	p1 = new Particle(25,25,50);
+	p1 = new Vehicle(100,100,5);
     framerateP = createP('');
     initiateFieldArray();
     createFlowField();
+}
+
+function forceAt(pos) {
+    let col = floor(pos.x / scl);
+    let row = floor(pos.y / scl);
+    return field[col][row].copy();
 }
 
 function draw() {
     background(220);
     
     
-    stroke(0);
-    for (let y = 0; y < rows; y++) {
-        for (let x = 0; x < cols; x++) {
-            push();
-            let vec = field[x][y];
-            translate(x * scl, y * scl);
-            rotate(vec.heading());
-            line(0, 0, scl, 0);
-            pop();
+    if (displayField) {
+        stroke(0);
+        for (let y = 0; y < rows; y++) {
+            for (let x = 0; x < cols; x++) {
+                push();
+                let vec = field[x][y];
+                translate(x * scl, y * scl);
+                rotate(vec.heading());
+                line(0, 0, scl, 0);
+                pop();
+            }
         }
     }
     
     
-	
-	p1.applyForce(createVector(0.1,0.1));
+	p1.applyForce(forceAt(p1.pos));
 	p1.update();
 	p1.draw();
     
