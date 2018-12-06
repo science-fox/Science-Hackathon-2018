@@ -50,8 +50,8 @@ function forceAt(pos) {
 }
 
 function draw() {
-    background(220);
-    
+    //background(220);
+    clear();
     
     if (displayField) {
         stroke(0);
