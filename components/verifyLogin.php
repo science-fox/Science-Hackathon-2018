@@ -3,7 +3,7 @@
   $logged_in = false;
   if (isset($_COOKIE["localhostUser"])){
     $cookie = $_COOKIE["localhostUser"];
-    $db = mysqli_connect("localhost", "myuser",	"mypass", "blogdb");
+    $db = mysqli_connect("sql12.freemysqlhosting.net:3306", "sql12268809",	"jftvPpaqd1", "sql12268809");
     if (!$db){
       //db connection error
       echo "<div class='alert alert-danger'>Error accessing login info from database!</div>";
