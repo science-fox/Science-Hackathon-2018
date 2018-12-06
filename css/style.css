@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC');
+/*
+ * Colours we are using:
+ * Blue: #36ABC4
+ * Orange: #B25505
+ * Yellow: f2ee02
+ */
+body {
+	margin: 0;
+	display: flex;
+	font-family: "Noto Sans TC";
+}
+#hero {
+	background-image: url("../img/header-bg.png");
+	background-size: cover;
+	background-position: center;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#login-box {
+	display: flex;
+	flex-direction: column;
+	background-color: #FFFFFFA0;
+	border-radius: 2em;
+	padding: 2em;
+}

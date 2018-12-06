@@ -1,4 +1,22 @@
 <!DOCTYPE html>
 <html>
-
+	<head>
+		<link href="./css/style.css" text="text/css" rel="stylesheet">
+	</head>
+	<body>
+	<nav></nav>
+	<div id="hero">
+		<div id="login-box">
+			<label for="email">Email Address</label>
+			<input type="email" name="email" id="email" class="form-control" placeholder="Email Address">
+			<label for="password">Password</label>
+			<input type="password" class="form-control" id="password" placeholder="Please type your desired password">
+			<div id="password-help"></div>
+			<br>
+			<button onclick="login()" value="submit" id="submit" class="btn btn-primary btn-lg btn-block">Log In</button>
+			<div id="submit-help"></div>
+			Don't have an account? <a href="/admin/signup.php">sign up</a>
+		</div>
+	</div>
+	</body>
 </html>
