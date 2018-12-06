@@ -32,11 +32,13 @@ function createFlowField() {
 function setup() {
     w=windowHeight;
     h=windowHeight;
-    createCanvas(w, h);
+    var cnv = createCanvas(w, h);
+    cnv.style('display', 'block');
+    cnv.parent("triangleBoi");
     cols = floor(w / scl);
     rows = floor(h / scl);
 	p1 = new Vehicle(h/2,w/2,5);
-    framerateP = createP('');
+    //framerateP = createP('');
     initiateFieldArray();
     createFlowField();
 }
@@ -70,7 +72,7 @@ function draw() {
 	p1.update();
 	p1.draw();
     
-    framerateP.html(floor(frameRate()));
+    //framerateP.html(floor(frameRate()));
 }
 
 
