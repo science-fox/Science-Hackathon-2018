@@ -2,31 +2,24 @@ class Particle {
 	
     constructor(x,y,r) {
         this.r = r;
-        this.x = x;
-        this.y = y;
-        this.vx = 0.0;
-        this.vy = 0.0;
-        this.ax = 0.0;
-        this.ay = 0.0;
+        this.pos = createVector(x,y);
+        this.vel = createVector(0,0);
+        this.acc = createVector(0,0);
         this.mass = 1.0;
     }
 	
-    addForce(x,y) {
-		this.ax += x / this.mass;
-		this.ay += y / this.mass;
+    applyForce(force) {
+        this.acc.add(force.div(this.mass));
 	}
 	
 	update() {
-		this.vx += this.ax;
-		this.vy += this.ay;
-		this.x += this.vx;
-		this.y += this.vy;
-		this.ax = 0;
-		this.ay = 0;
+        this.vel.add(this.acc)
+        this.pos.add(this.vel)
+        this.acc = createVector(0,0);
 	}
 
     draw() {
-        ellipse(this.x, this.y, this.r);
+        ellipse(this.pos.x, this.pos.y, this.r);
     }
 
 }
