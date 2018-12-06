@@ -138,14 +138,14 @@ let checkUniqueEmail = async function(email) {
 
 let checkEmailGet = async function(email){
   email = decodeURIComponent(email);
-  let response = await fetch("/server/admin.php?email=" + email);
+  let response = await fetch("/hackathon/server/admin.php?email=" + email);
   let result = await response.text();
   return result;
 }
 
 
 let signupPost = async function(email, name, password){
-  let response = await fetch("/server/admin.php",
+  let response = await fetch("/hackathon/server/admin.php",
   	{ method: 'POST',
   		headers: {
   			'Content-type': 'application/x-www-form-urlencoded',
@@ -161,7 +161,7 @@ let signupPost = async function(email, name, password){
 
 
 let loginPost = async function(email, password){
-  let response = await fetch("/server/admin.php",
+  let response = await fetch("/hackathon/server/admin.php",
   { method: 'POST',
     headers: {
       'Content-type': 'application/x-www-form-urlencoded',

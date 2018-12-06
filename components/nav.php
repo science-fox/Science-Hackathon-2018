@@ -20,14 +20,14 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Home</a>
+            <a class="navbar-brand" href="/hackathon/">Home</a>
           </div>
 
           <div class="collapse navbar-collapse" id="main-navbar">
             <ul class="nav navbar-nav">
-              <li><a href="/blog">Blog</a></li>
-              <?php if ($logged_in) {echo "<li><a href='/blog/new.php'>New Post</a></li>";}?>
-              <li><a href="/about.php">About</a></li>
+              <li><a href="/hackathon/blog">Blog</a></li>
+              <?php if ($logged_in) {echo "<li><a href='/hackathon/blog/new.php'>New Post</a></li>";}?>
+              <li><a href="/hackathon/about.php">About</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -43,8 +43,8 @@
                   <?php if ($logged_in) {
                     echo "<li><a href='?logout', onclick='logout()'>Logout</a></li>";
                   } else {
-                    echo "<li><a href='/admin/login.php'>Login</a></li>";
-                    echo "<li><a href='/admin/signup.php'>Signup</a></li>";
+                    echo "<li><a href='/hackathon/admin/login.php'>Login</a></li>";
+                    echo "<li><a href='/hackathon/admin/signup.php'>Signup</a></li>";
                   }?>
                 </ul>
               </li>
