@@ -1,8 +1,10 @@
 var incr = 0.1;
-var scl = 10;
+var scl = 20;
 var cols, rows;
 var field
 var displayField = true;
+var w;
+var h;
 
 var p1;
 
@@ -18,7 +20,7 @@ function createFlowField() {
     for (let y = 0; y < rows; y++) {
         let xoff = 0;
         for (let x = 0; x < cols; x++) {
-            let index = (x + y * width) * 4;
+            let index = (x + y * w) * 4;
             let angle = noise(xoff, yoff) * TWO_PI;
             xoff += incr;
             field[x][y] = p5.Vector.fromAngle(angle);    
@@ -28,10 +30,12 @@ function createFlowField() {
 }
 
 function setup() {
-    createCanvas(800, 800);
-    cols = floor(width / scl);
-    rows = floor(height / scl);
-	p1 = new Vehicle(100,100,5);
+    w=windowHeight;
+    h=windowHeight;
+    createCanvas(w, h);
+    cols = floor(w / scl);
+    rows = floor(h / scl);
+	p1 = new Vehicle(h/2,w/2,5);
     framerateP = createP('');
     initiateFieldArray();
     createFlowField();

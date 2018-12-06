@@ -17,10 +17,14 @@ class Particle {
 	}
 	
 	update() {
+        this.forces();
+	}
+    
+    forces(){   
         this.vel.add(this.acc);
         this.pos.add(this.vel);
         this.acc.mult(0);
-	}
+    }
 
     draw() {
         ellipse(this.pos.x, this.pos.y, this.r);
@@ -38,10 +42,36 @@ class Vehicle extends Particle {
         steer.limit(this.maxForce);
         this.acc.add(steer.div(this.mass));
     }
+    
+    update() {
+        this.forces();
+        this.edges();
+    }
+        
+        
+    
+    edges() {
+        if (this.pos.x < this.r) {
+            console.log("left")
+            this.pos.x = width-this.r-scl;
+        }
+        if (this.pos.x > width-this.r-scl) {
+            console.log("right")
+            this.pos.x = 0+this.r;
+        }
+        if (this.pos.y < this.r) {
+            console.log("top")
+            this.pos.y = height-this.r-scl;
+        }
+        if (this.pos.y > height-this.r-scl) {
+            console.log("bottom")
+            this.pos.y = 0+this.r;
+        }
+    }
 
     draw() {
         let angle = this.vel.heading() + HALF_PI;
-        fill(127);
+        fill(255);
         stroke(0);
         strokeWeight(1);
         push();
