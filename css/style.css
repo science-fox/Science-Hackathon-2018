@@ -115,3 +115,10 @@ nav span {
 #freeplay {
 	font-size: 3em;
 }
+
+.room-code
+{
+    font-size:40px;
+    font-weight: bold;
+    text-align: center;
+}
