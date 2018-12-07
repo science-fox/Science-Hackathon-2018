@@ -41,7 +41,7 @@ body {
 	background-size: cover;
 	background-position: center;
 	width: 100vw;
-	height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -70,14 +70,14 @@ body {
 
 #lesson-box {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	background-color: #FFFFFFA0;
 	border-radius: 2em;
-	padding: 2em;
+	padding: 5vw;
 	height: 50vh;
-	width: 90vw;
+	width: 82vw;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 	flex-wrap: wrap;
 }
 .orange {
@@ -144,9 +144,10 @@ nav span {
 	font-size: 3em;
 }
 
-.room-code
-{
-    font-size:40px;
-    font-weight: bold;
-    text-align: center;
+.subject {
+	background-color: white;
+	border-radius: 2em;
+	width: 15vw;
+	padding: 2.5vw;
+	margin: .5vw;
 }

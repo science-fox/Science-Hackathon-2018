@@ -4,7 +4,14 @@
 		<link href="./css/style.css" text="text/css" rel="stylesheet">
 		<meta charset="utf-8">
 	</head>
-	<body>
+	<script>
+		function addLink() {
+	document.querySelector(".subject").addEventListener("mousedown", (e) => {
+		document.location.assign("/hackathon/lessons/flowfield");
+	});
+		}
+	</script>
+	<body onload="addLink()">
 	<nav>
 		<span>ScienceFox</span>
 		<span>Home</span>
@@ -13,7 +20,22 @@
 	<div id="lessons-container">
 		<h1>Lessons</h1>
 		<div id="lesson-box">
-			
+			<div onclick="document.location.assign('/hackathon/lessons/flowfield')" class="subject">
+				<h3>Fluid Flow</h3>
+				<p>Fluids and how they interact.</p>
+			</div>
+			<div onclick="document.location.assign('/hackathon/lessons/flowfield')" class="subject">
+				<h3>Fluid Flow</h3>
+				<p>Fluids and how they interact.</p>
+			</div>
+			<div onclick="document.location.assign('/hackathon/lessons/flowfield')" class="subject">
+				<h3>Fluid Flow</h3>
+				<p>Fluids and how they interact.</p>
+			</div>
+			<div onclick="document.location.assign('/hackathon/lessons/flowfield')" class="subject">
+				<h3>Fluid Flow</h3>
+				<p>Fluids and how they interact.</p>
+			</div>
 		</div>
 	</div>
 	</body>
