@@ -22,6 +22,17 @@ body {
 	align-items: center;
 }
 
+#options {
+	background-image: url("../img/header-bg.png");
+	background-size: cover;
+	background-position: center;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+}
 #login-box {
 	display: flex;
 	flex-direction: column;
@@ -30,6 +41,17 @@ body {
 	padding: 2em;
 }
 
+#student-box {
+	display: flex;
+	flex-direction: column;
+	background-color: #FFFFFFA0;
+	border-radius: 2em;
+	padding: 2em;
+	height: 50vh;
+	width: 35vw;
+	align-items: center;
+	justify-content: center;
+}
 .orange {
 	background-color: #fc9014;
 }
@@ -73,4 +95,23 @@ nav span {
 	margin-right: 3em;
 	margin-top: .5em;
 	margin-bottom: .5em;
+}
+
+#enter-code {
+	font-size: 2em;
+	margin-bottom: 2em;
+}
+
+#student-box > .text-input {
+	width: 25vw;
+	height: 5em;
+}
+
+#student-box > .button {
+	height: 5em;
+	width: 25vw;
+}
+
+#freeplay {
+	font-size: 3em;
 }
