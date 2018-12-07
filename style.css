@@ -71,6 +71,26 @@ h1 {
 	font-size: 1.5em;
 }
 
+#heading {
+	color: #fc9014;
+}
+
+.orange {
+	background-color: #fc9014;
+}
+.button {
+	font-size: 1em;
+	text-align: center;
+	border: none;
+	border-radius: .5em;
+	text-decoration: none;
+	color: #FFFFFF;
+	min-height: 2.25em;
+	margin: .2em;
+	vertical-align: middle;
+	margin-top: 30px;
+}
+
 .wrapper {
   /*helps keep footer at the bottom*/
   min-height: 100%;
@@ -157,7 +177,13 @@ body
 		transform: translate(-130px, 0);
 		animation-timing-function: 1s ease-in;
 		animation-duration: 1s;
+		
 	}
+	
+	.menu:hover .button{
+		display:block;
+	}
+	
 	.title
 	{
 		top:50%;
