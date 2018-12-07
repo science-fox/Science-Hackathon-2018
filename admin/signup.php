@@ -1,37 +1,33 @@
-<?php $title = "Signup" ?>
-<?php include "../components/nav.php" ?>
-<h1>Admin</h1>
-<div class="jumbotron jumbotron-custom"> <!--text-center-->
-  <h2>Create an account</h2>
-  <div class="form-horizontal form-group form-group-lg row">
-
-    <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
-      <label for="name">Name</label>
-      <input type="text" name="name" id="name" class="form-control" placeholder="Please type your name" autofocus="autofocus"/>
-      <div id="name-help"></div>
-      <br>
-      <label for="email">Email address</label>
-      <input type="email" name="email" id="email" class="form-control" placeholder="Please type email address">
-      <div id="email-help"></div>
-      <br>
-      <label for="password">Password</label>
-      <input type="password" class="form-control" id="password" placeholder="Please type your desired password">
-      <small id="passwordHelpBlock" class="form-text text-muted">
-          Your password must be 5-20 characters long
-      </small>
-      <div id="password-help"></div>
-      <br>
-      <label for="confirm-password">Retype Password</label>
-      <input type="password" class="form-control" id="confirm-password" placeholder="Please confirm your desired password">
-      <div id="password-match-help"></div>
-      <br>
-      <button onclick="signup()" value="submit" id="submit" class="btn btn-primary btn-lg btn-block">Sign Up</button>
-      <div id="submit-help"></div>
-      Already have an account? <a href="/admin/login.php">log in</a>
-    </div>
-
-  </div>
-</div>
-<?php include "../components/footer.html" ?>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha512.js"></script>
-<script type="text/javascript" src="admin.js"></script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="/hackathon/css/style.css" text="text/css" rel="stylesheet">
+	</head>
+	<body>
+	<nav>
+		<span>ScienceFox</span>
+		<span>Home</span>
+		<span>Lessons</span>
+	</nav>
+	<div id="hero">
+		<h1>Sign Up</h1>
+		<div id="login-box">
+            
+            <input type="text" name="name" id="name" class="form-control text-input" placeholder="Name" autofocus="autofocus"/>
+            <div id="name-help"></div>
+			<input type="email" name="email" id="email" class="form-control text-input" placeholder="Email">
+            <div id="email-help"></div>
+			<input type="password" class="form-control text-input" id="password" placeholder="Password">
+            <div id="password-help"></div>
+            <input type="password" class="form-control text-input" id="confirm-password" placeholder="Confirm Password">
+            <div id="password-match-help"></div>
+			<button onclick="signup()" value="submit" id="submit" class="button orange">Sign Up</button>
+            <div id="submit-help"></div>
+			<span id="note">Already have an account?</span>
+			<a href="/hackathon/admin/login.php" class="button orange">Log in</a>
+			</div>
+	</div>
+	</body>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha512.js"></script>
+    <script type="text/javascript" src="admin.js"></script>
+</html>
