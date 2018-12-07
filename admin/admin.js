@@ -23,9 +23,9 @@ async function signup() {
       var alertText = document.createTextNode("There was an error inserting you into the database.");
       makeAlert("alert-danger", alertText, "submit-help");
     } else {
-      var alertText = document.createTextNode("Signed up! Redirecting to blog page...");
+      var alertText = document.createTextNode("Signed up! Redirecting to student page...");
       makeAlert("alert-success", alertText, "submit-help");
-      document.location.assign("../blog");
+      document.location.assign("/hackathon/student.html");
     }
   }
 }
@@ -56,9 +56,9 @@ async function login() {
       var alertText = document.createTextNode("There was an error with the database.");
       makeAlert("alert-danger", alertText, "submit-help");
     } else {
-      var alertText = document.createTextNode("Logged in! Redirecting to blog page...");
+      var alertText = document.createTextNode("Logged in! Redirecting to student page...");
       makeAlert("alert-success", alertText, "submit-help");
-      document.location.assign("../blog");
+      document.location.assign("/hackathon/student.html");
     }
   }
 }
