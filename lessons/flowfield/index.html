@@ -1,38 +1,51 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>flowfield mockup</title>
-<style>
-body {
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>flowfield mockup</title>
+	<link href="/hackathon/style.css" rel="stylesheet"></link>
+	<style>
+	body {
 	padding: 0;
 	margin: 0;
-}
-</style>
+	}
+	</style>
 </head>
 <body>
-	<div class="canvasBoi" id="triangleBoi" style="background-image: url('http://localhost/hackathon/img/sky-bg.jpg')"></div>
 
-	<div class="menu">
-		<div class="title">MENU</div>
-		<ul class="nav">
-			<li>Question</li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Work</a></li>
-			<li><a href="#">Resources</a></li>
-			<li><a href="#">Contact</a></li>
-		</ul>
+	<div class="canvasBoi" id="triangleBoi">
+		
+		<div class="menu">			
+		</div>
+	
+	<div class="item">
+			<h1 style="text-align: right">6a324</h1>
+			<h1>Fluid Flow</h1>
+			<h3>What is the flow of a fluid?</h3>
+			<p>The flow of a fluid is when you have a fluid, whether it's gas or liquid, that is moving in a direction. There are 2 main types of flow, laminar flow, and turbulent flow. Laminar flow is when all the fluid is moving together in the same direction and there are no vortices or eddies. Turbulent flow is when there are many eddies and vortices, the flow is very chaotic.</p>
+
+			<h3>How do wings interact with fluids?</h3>
+			<p>When you are moving through a fluid, be it water or air, you are pushing that fluid out of the way, and because of Newtons 3rd law and conservation of momentum, that takes energy. 
+			When you have a fluid moving over a wing the more it has to change its initial path the more force it exerts on the wing. Because of the shape of the wing, the fluid that travels over the top of the wing has to move faster and so there is a smaller pressure on the wing. When there is lower pressure on the wings you get a ‘lift’ force on the wings which opposes gravity.</p>
+
+			<h3>What are the forces acting on a airplane?</h3>
+			<p>When you have a airplane there are some important forces to take into consideration.
+			When the plane is stationary the only forces on it are the weight force and the normal force but when the plane is in the air there are four main forces; the weight force; lift; thrust and drag.
+			By combining thrust from different sides of the plane you can turn/ rotate the plane. 
+
+			Here you can see a arrow representing a plane and how the forces on a two-dimensional field work (assuming that the gravity and lift forces are balanced.)</p>
+
+		</div>
+	
 	</div>
-
-	<div class="intro">
-		Hover over the menu.<br> Thanks for visiting.
-	</div>
-
+	
+	
+	
 	<script src="../../p5/p5.min.js"></script>
-	<script src="../../p5/addons/p5.dom.min.js"></script>
-	<script src="../dependencies/particleSystem.js"></script>
-	<!--for dependency in .dependencies-->
-	<script src="flowfield.js"></script>
+		<script src="../../p5/addons/p5.dom.min.js"></script>
+		<script src="../dependencies/particleSystem.js"></script>
+		<!--for dependency in .dependencies-->
+		<script src="flowfield.js"></script>	
 </body>
 </html>
