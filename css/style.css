@@ -4,6 +4,8 @@
  * Blue: #36ABC4
  * Orange: #fc9014
  * Yellow: f2ee02
+ * Gradient Middle: 00d1cd
+ * Gradient Edge: 0086c1
  */
 body {
 	margin: 0;
@@ -23,7 +25,7 @@ body {
 }
 
 #options {
-	background-image: url("../img/header-bg.png");
+	background-image: linear-gradient(to right, #0086c1, #00d1cd, #0086c1);
 	background-size: cover;
 	background-position: center;
 	width: 100vw;
@@ -32,6 +34,19 @@ body {
 	flex-direction: row;
 	justify-content: space-evenly;
 	align-items: center;
+	background-attachment: fixed;
+}
+#lessons-container {
+	background-image: linear-gradient(to right, #0086c1, #00d1cd, #0086c1);
+	background-size: cover;
+	background-position: center;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	background-attachment: fixed;
 }
 #login-box {
 	display: flex;
@@ -51,6 +66,19 @@ body {
 	width: 35vw;
 	align-items: center;
 	justify-content: center;
+}
+
+#lesson-box {
+	display: flex;
+	flex-direction: column;
+	background-color: #FFFFFFA0;
+	border-radius: 2em;
+	padding: 2em;
+	height: 50vh;
+	width: 90vw;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 .orange {
 	background-color: #fc9014;
