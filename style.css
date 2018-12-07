@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC');
+
 /*navbar customisations*/
 nav.navbar-footer-custom {
     position: absolute !important;
@@ -62,8 +64,11 @@ html,body {
   margin: 0;
   padding: 0;
   height: 100%;
-    
-  background-image: url("http://localhost/hackathon/img/sky-bg.jpg")
+  font-family: "Noto Sans TC";
+}
+
+h1 {
+	font-size: 1.5em;
 }
 
 .wrapper {
@@ -100,5 +105,93 @@ textarea {
 
 
 .canvasBoi {
-  background-image: url("http://localhost/hackathon/img/sky-bg.jpg")
+  background-image: url("http://localhost/hackathon/img/sky-bg.jpg");
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justfy-content: flex-start;
 }
+
+.item {
+	width: 650px;
+	order: 1;
+	font-family: "Noto Sans TC";
+}
+
+/*stuff*/
+@mixin vertical-align($position) {
+  position:$position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin all-transition($time)
+{
+	transition: all $time;
+	-webkit-transition: all $time;
+}
+body
+{
+	margin: 0;
+  font-family: 'Muli', sans-serif;
+}
+.menu {
+	
+	font-weight: 100;
+	background: #efefef;
+	width: 150px;
+	height: 100%;
+	padding-left: 50px;
+	position: fixed;
+	z-index: 100;
+	-webkit-box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.2);
+	box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.2);
+	right: -130px;
+	@include all-transition(0.3s);
+	color: #222;
+}
+	
+	.menu:hover{
+		transform: translate(-130px, 0);
+		animation-timing-function: 1s ease-in;
+		animation-duration: 1s;
+	}
+	.title
+	{
+		top:50%;
+		@include vertical-align(absolute);
+		transform: rotate(270deg);
+		left: 0;
+		margin: 0;
+		font-weight: 800;
+		font-size: 15px;
+
+	}
+	.nav
+	{
+		@include vertical-align(absolute);
+    font-weight: 100;
+
+		li
+		{
+				padding-bottom: 30px;
+				list-style-type: none;
+
+				a
+				{
+					display: block;
+					text-decoration: none;
+					color: inherit;
+					@include all-transition(0.3s);
+
+					&:hover
+					{
+						color: #aaa;
+					}
+				}
+		}
+	}
+}
+
